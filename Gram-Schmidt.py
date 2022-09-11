@@ -28,13 +28,11 @@ def gsBasis4(A) :
         
     B[:, 3] = B[:, 3] - B[:, 3] @ B[:, 0] * B[:, 0] - B[:, 3] @ B[:, 1] * B[:, 1] - B[:, 3] @ B[:, 2] * B[:, 2]
     
-    # Now normalise if possible
     if la.norm(B[:, 3]) > verySmallNumber :
         B[:, 3] = B[:, 3] / la.norm(B[:, 3])
     else :
         B[:, 3] = np.zeros_like(B[:, 3]) 
     
-    # Finally, we return the result:
     return B
 
 def gsBasis(A) :
